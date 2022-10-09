@@ -1,5 +1,5 @@
 import Application from '../models/Application.js';
-import mailHelper from './../helpers/mail.helper.js'
+//import { mailHelper as mailer } from './../helpers/mail.helper.js'
 /*const User = require('./../models/User');
 const nodemailer = require("nodemailer");*/
 
@@ -46,10 +46,10 @@ const AddApplication = async (req, res, next) => {
           message: " Le problème application a été ajouté avec succès"
         });
 
-        const msg = "<b>Bonjour, Il y a un réclamation d'un problème application </b> <br> <p>User Id: "+ req.body.userId+"</p> <br> <p>Type: "+ req.body.title+"</p> <br><p>Description: "+req.body.description+"</p><br><p>Src24 : "+req.body.src24+"</p><br><p>Src25 : "+req.body.src25+"</p><br><p>Src26 : "+req.body.src26+"</p><br><p>Contact : "+req.body.contact+"</p><br><p>Request For: "+req.body.requestedFor+"</p> <br><p>Référence : "+req.body.reference+"</p><br><p>Attachament: "+req.file.filename+"</p><p>Urgency: "+req.body.urgency+"</p>"; // plain text body
+        /*const msg = "<b>Bonjour, Il y a un réclamation d'un problème application </b> <br> <p>User Id: "+ req.body.userId+"</p> <br> <p>Type: "+ req.body.title+"</p> <br><p>Description: "+req.body.description+"</p><br><p>Src24 : "+req.body.src24+"</p><br><p>Src25 : "+req.body.src25+"</p><br><p>Src26 : "+req.body.src26+"</p><br><p>Contact : "+req.body.contact+"</p><br><p>Request For: "+req.body.requestedFor+"</p> <br><p>Référence : "+req.body.reference+"</p><br><p>Attachament: "+req.file.filename+"</p><p>Urgency: "+req.body.urgency+"</p>"; // plain text body
 
-        mailHelper(req.body.userId, "PROBLÈME APPLICATION", msg);
-        //findUser(req.body.userId, req.body.title);
+        mailer(req.body.userId, "PROBLÈME APPLICATION", msg);
+        findUser(req.body.userId, req.body.title);*/
     })
     console.log(req.file, req.body)
   } catch (error) {

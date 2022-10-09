@@ -1,6 +1,6 @@
 import Account from './../models/Account.js';
-import mailHelper from './../helpers/mail.helper.js'
-/*const User = require('./../models/User');
+/*import { mailHelper as mailer } from './../helpers/mail.helper.js'
+const User = require('./../models/User');
 const nodemailer = require("nodemailer");*/
 
 const GetAccount = async (req, res, next) => {
@@ -40,9 +40,9 @@ const AddAccount = async (req, res, next) => {
           message: "Le demande de nouveau compte a été ajouté avec succès !"
         });
         const msg = "<b>Bonjour, Il y a un demande de création un nouveau compte</b> <br> <p>User Id: "+ userId+"</p> <br> <p>Type: "+ accountType+"</p> <br><p>Région: "+region+"</p> <br><p>Request For: "+requestedFor+"</p> <br> <p>Urgency: "+urgency+"</p>"; // plain text body
-        mailHelper(userId, "DEMANDE DE NOUVEAU COMPTE", msg);
-        //findUser(userId, accountType);
-        //sendMail(user, accountType);
+        /*mailer(userId, "DEMANDE DE NOUVEAU COMPTE", msg);
+        findUser(userId, accountType);
+        sendMail(user, accountType);*/
       }
     })
   } catch (error) {

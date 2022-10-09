@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import User from './../models/User.js';
 
-const mailHelper = async (userId, subject, message) => {
+export const mailHelper = async (userId, subject, message) => {
   const user = await User.findById({_id: userId})
   //const type = accountType;
   console.log(user)
@@ -25,7 +25,7 @@ const sendMail = async (user, subject, message) => {
 
   let mailOption = {
     from:process.env.EMAIL_LOGIN,
-    to:"pfemainuser2022@outlook.com",
+    to:"exemple@outlook.com", //This must be outlook email 
     subject: subject,
     text: user.nom+" "+user.prenom,
     html: message
@@ -39,5 +39,3 @@ const sendMail = async (user, subject, message) => {
     }
   })
 }
-
-export default mailHelper

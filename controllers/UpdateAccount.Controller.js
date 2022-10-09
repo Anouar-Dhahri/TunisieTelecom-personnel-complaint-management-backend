@@ -1,8 +1,9 @@
 import UpdateAccount from './../models/UpdateAccount.js';
-import mailHelper from './../helpers/mail.helper.js'
-/*const User = require('./../models/User');
-const nodemailer = require("nodemailer");*/
-
+/*
+import { mailHelper as mailer } from './../helpers/mail.helper.js'
+const User = require('./../models/User');
+const nodemailer = require("nodemailer");
+*/
 const GetUpdateAccount = async (req, res, next) => {
   try {
     const accounts = await UpdateAccount.find();
@@ -39,9 +40,11 @@ const AddUpdateAccount = async (req, res, next) => {
           success:true,  
           message: "Le demande de modifier le compte a été ajouté avec succés"
         });
-        //findUser(userId, accountType);
-        const msg = "<b>Bonjour, Il y a un demande de modification d'un compte</b> <br> <p>User Id: "+ userId+"</p> <br> <p>Type: "+ accountType+"</p> <br><p>Région: "+region+"</p> <br><p>Request For: "+requestedFor+"</p> <br> <p>Urgency: "+urgency+"</p>"; // plain text body
-        mailHelper(userId,"MODIFICATION DE COMPTE", msg);
+        /*
+          findUser(userId, accountType);
+          const msg = "<b>Bonjour, Il y a un demande de modification d'un compte</b> <br> <p>User Id: "+ userId+"</p> <br> <p>Type: "+ accountType+"</p> <br><p>Région: "+region+"</p> <br><p>Request For: "+requestedFor+"</p> <br> <p>Urgency: "+urgency+"</p>"; // plain text body
+          mailer(userId,"MODIFICATION DE COMPTE", msg);
+        */
       }
     })
   } catch (error) {

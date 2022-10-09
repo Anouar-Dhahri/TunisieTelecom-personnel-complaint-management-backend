@@ -1,6 +1,6 @@
 import Hardware from '../models/Hardware.js';
-import mailHelper from './../helpers/mail.helper.js'
-/*const User = require('./../models/User');
+/*import { mailHelper as mailer } from './../helpers/mail.helper.js'
+const User = require('./../models/User');
 const nodemailer = require("nodemailer");*/
 
 const GetHardware = async (req, res, next) => {
@@ -41,9 +41,9 @@ const AddHardware = async (req, res, next) => {
           success:true,  
           message: "Le demande de nouveau équipement a été ajouté avec succés"
         });
-        //findUser(userId, hardwareName);
+        /*findUser(userId, hardwareName);
         const msg = "<b>Il y a un demande de nouveau équipement </b> <br><p>User Id: "+ userId+"</p> <br><p>Équipement : "+ hardwareName+"</p> <br><p>Région: "+region+"</p> <br><p>requested For :"+requestedFor+"</p> <br> <p>aquisition_transfert_budget : "+atb+"</p><br><p>Nature Besoin :"+natureBesoin+"</p> <br><p>Urgency : "+urgency+"</p>"; // plain text body
-        mailHelper(userId, "DEMANDE D'ÉQUIPEMENT", msg);
+        mailer(userId, "DEMANDE D'ÉQUIPEMENT", msg);*/
       }
     })
   } catch (error) {

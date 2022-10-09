@@ -1,7 +1,8 @@
 import Software from '../models/Software.js';
-import mailHelper from './../helpers/mail.helper.js'
-/*const User = require('./../models/User');
-const nodemailer = require("nodemailer");*/
+/*import { mailHelper as mailer } from './../helpers/mail.helper.js'
+const User = require('./../models/User');
+const nodemailer = require("nodemailer");
+*/
 
 const GetSoftware = async (req, res, next) => {
   try {
@@ -40,9 +41,10 @@ const AddSoftware = async (req, res, next) => {
           success:true,
           message: "Le demande de nouveau logiciel a été ajouté avec succés"
         });
-        //findUser(userId, softwareName);
+        /*findUser(userId, softwareName);
         const msg = "<b>Il y a un demande de nouveau logiciel </b> <br><p>User Id: "+ userId+"</p> <br><p>Logiciel : "+ softwareName+"</p> <br><p>Région: "+region+"</p> <br><p>requested For :"+requestedFor+"</p> <br> <p>Nom de Machine : "+machineName+"</p><br><p>Urgency : "+urgency+"</p>"; // plain text body
-        mailHelper(userId, "DEMANDE DE NOUVEAU SOFTWARE", msg);
+        mailer(userId, "DEMANDE DE NOUVEAU SOFTWARE", msg);
+        */
       }
     });
   } catch (error) {
