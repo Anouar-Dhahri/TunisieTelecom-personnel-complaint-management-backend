@@ -7,6 +7,7 @@ const port = process.env.PORT || 5100;
 
 import dbConnect from './database/connection.js';
 
+import { router as adminRouter } from './routes/Admin.routes.js'
 import { router as authRouter } from './routes/Auth.routes.js'
 import { router as userRouter } from './routes/User.routes.js'
 import { router as accountRouter } from './routes/Account.routes.js'
@@ -26,6 +27,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cors());
 
+app.use('/api/admin', adminRouter );
 app.use('/api/auth', authRouter );
 app.use('/api/users', userRouter );
 app.use('/api/account', accountRouter );
